@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
    EditText ed1,ed2;
    Button button;
+   String getUname,getPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(getApplicationContext(),"hello",Toast.LENGTH_LONG).show();
+                getUname=ed1.getText().toString();
+                getPassword=ed2.getText().toString();
+
+
+                Toast.makeText(getApplicationContext(),getUname,Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),getPassword,Toast.LENGTH_LONG).show();
             }
         });
     }
