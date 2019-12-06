@@ -3,6 +3,7 @@ package com.example.assapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(),getUname,Toast.LENGTH_LONG).show();
                 Toast.makeText(getApplicationContext(),getPassword,Toast.LENGTH_LONG).show();
+                Log.d("username",getUname);
+                Log.d("pass",getPassword);
+                if(getUname.equals("admin")&&getPassword.equals("12345")) {
+                    Toast.makeText(getApplicationContext(), "login sucess", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(),"login fail",Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
