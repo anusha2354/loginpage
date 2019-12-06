@@ -2,6 +2,7 @@ package com.example.assapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
    EditText ed1,ed2;
-   Button button;
+   Button button,button2;
    String getUname,getPassword;
 
     @Override
@@ -21,6 +22,15 @@ public class MainActivity extends AppCompatActivity {
         ed1=(EditText)findViewById(R.id.username);
         ed2=(EditText)findViewById(R.id.password);
         button=(Button)findViewById(R.id.loginbutton);
+        button2=(Button)findViewById(R.id.regbutton);
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
